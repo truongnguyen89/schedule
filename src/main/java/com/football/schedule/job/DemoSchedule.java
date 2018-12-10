@@ -17,15 +17,14 @@ import java.util.Date;
  */
 @Component
 public class DemoSchedule {
-    @Scheduled(fixedDelay = 2000)
+    @Scheduled(fixedDelay = 20000)
     public void scheduleTaskWithFixedRate() {
         System.out.println(" >>> scheduleTaskWithFixedRate " + DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS) + " <<<");
     }
 
     @Scheduled(cron = "*/60 * * * * *")
     public void scheduleTaskWithCronExpression() {
-        System.out.println(" >>> scheduleTaskWithCronExpression send gmail "
-                + GmailCommon.send("nqtruong@ecpay.vn", "Test gui mail",
-                DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS) + " <<<").toString());
+        GmailCommon.send("nqtruong@ecpay.vn", "Test gui mail",
+                "Thoi gian hien tai la " + DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS));
     }
 }
