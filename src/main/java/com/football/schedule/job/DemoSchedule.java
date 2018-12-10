@@ -1,6 +1,7 @@
 package com.football.schedule.job;
 
 import com.football.common.constant.Constant;
+import com.football.common.email.GmailCommon;
 import com.football.common.util.DateCommon;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -19,5 +20,12 @@ public class DemoSchedule {
     @Scheduled(fixedDelay = 2000)
     public void scheduleTaskWithFixedRate() {
         System.out.println(" >>> scheduleTaskWithFixedRate " + DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS) + " <<<");
+    }
+
+    @Scheduled(cron = "*/60 * * * * *")
+    public void scheduleTaskWithCronExpression() {
+        System.out.println(" >>> scheduleTaskWithCronExpression send gmail "
+//                + GmailCommon.
+                + DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS) + " <<<");
     }
 }
