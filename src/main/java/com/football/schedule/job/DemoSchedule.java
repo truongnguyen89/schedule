@@ -25,7 +25,7 @@ public class DemoSchedule {
     @Scheduled(cron = "*/60 * * * * *")
     public void scheduleTaskWithCronExpression() {
         System.out.println(" >>> scheduleTaskWithCronExpression send gmail "
-//                + GmailCommon.
-                + DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS) + " <<<");
+                + GmailCommon.send("nqtruong@ecpay.vn", "Test gui mail",
+                DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS) + " <<<").toString());
     }
 }
