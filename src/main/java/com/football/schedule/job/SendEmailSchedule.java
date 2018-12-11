@@ -19,8 +19,12 @@ public class SendEmailSchedule {
     @Autowired
     EmailService emailService;
 
-    @Scheduled(fixedDelay = 2000)
+    @Scheduled(fixedDelay = 1000)
     public void sendEmail() {
-        System.out.println(" >>> scheduleTaskWithFixedRate " + DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS) + " <<<");
+        try {
+            emailService.sendByGmail();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

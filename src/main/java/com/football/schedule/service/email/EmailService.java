@@ -17,5 +17,5 @@ public interface EmailService {
 
     Email create(Email email) throws Exception;
 
-    Response sendByGmail(Email email) throws Exception;
+    Response sendByGmail() throws Exception;
 }
