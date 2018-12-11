@@ -22,7 +22,7 @@ public class DemoSchedule {
         System.out.println(" >>> scheduleTaskWithFixedRate " + DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS) + " <<<");
     }
 
-    @Scheduled(cron = "*/60 * * * * *")
+    @Scheduled(cron = "0 0 16,19 * * *")
     public void scheduleTaskWithCronExpression() {
         GmailCommon.send("nqtruong@ecpay.vn", "Test gui mail",
                 "Thoi gian hien tai la " + DateCommon.convertDateToStringByPattern(new Date(), Constant.DATE.FORMAT.FULL_DATE_SSS));
