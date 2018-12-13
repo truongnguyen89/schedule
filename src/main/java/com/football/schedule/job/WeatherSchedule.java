@@ -1,5 +1,8 @@
 package com.football.schedule.job;
 
+import com.football.common.util.JsonCommon;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.football.common.constant.Constant;
 import com.football.common.model.weather.WeatherLocal;
 import com.football.schedule.service.weather.WeatherService;
@@ -18,27 +21,31 @@ import java.util.List;
  */
 @Component
 public class WeatherSchedule {
+    private static final Logger LOGGER = LogManager.getLogger(Constant.LOG_APPENDER.APPLICATION);
     @Autowired
     WeatherService weatherService;
 
 
-    @Scheduled(fixedDelay = 60000, initialDelay = 10000)
+    @Scheduled(fixedDelay = 6000, initialDelay = 15000)
     public void get5DayWeather() {
-        System.out.println("Begin get5DayWeather ");
+        long id = System.currentTimeMillis();
+        LOGGER.info("[B][" + id + "] >>>>>>>>>>>>>>>>>>>>>>>>>> Start WeatherSchedule.get5DayWeather ...");
         List<WeatherLocal> weatherLocalList = weatherService.findByStatus(Constant.STATUS_OBJECT.ACTIVE);
-        System.out.println("Doing get5DayWeather " + weatherLocalList.size());
+        LOGGER.info("[" + id + "] weatherLocalList.size = " + weatherLocalList.size());
         for (WeatherLocal weatherLocal : weatherLocalList) {
-            System.out.println("Doing get5DayWeather " + weatherLocal.getOpenWeatherId());
             weatherService.get5DayWeather(weatherLocal.getOpenWeatherId());
+            LOGGER.info("[" + id + "][Duration = " + (System.currentTimeMillis() - id) + "] end get5DayWeather for " + JsonCommon.objectToJsonNotNull(weatherLocal));
+            id = System.currentTimeMillis();
         }
-        System.out.println("End get5DayWeather ");
+        LOGGER.info("[E][" + id + "][Duration = " + (System.currentTimeMillis() - id) + "] >>>>>>>>>>>>>>>>>>>>>>>>>> End WeatherSchedule.get5DayWeather ...");
     }
 
-    @Scheduled(fixedDelay = 660000, initialDelay = 100000)
+    @Scheduled(fixedDelay = 6000, initialDelay = 100000)
     public void importWatherLocal() {
-        System.out.println("Begin importWatherLocal ");
+        long id = System.currentTimeMillis();
+        LOGGER.info("[B][" + id + "] >>>>>>>>>>>>>>>>>>>>>>>>>> Start WeatherSchedule.importWatherLocal ...");
         weatherService.importWatherLocal();
-        System.out.println("End importWatherLocal ");
+        LOGGER.info("[E][" + id + "][Duration = " + (System.currentTimeMillis() - id) + "] >>>>>>>>>>>>>>>>>>>>>>>>>> End WeatherSchedule.importWatherLocal ...");
     }
 
 }

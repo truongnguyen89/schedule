@@ -45,7 +45,7 @@ public class ScheduleApplication {
         LOGGER.info("   Profile(s)          : " + env.getActiveProfiles()[0]);
         LOGGER.info("----------------------------------------------------------");
 
-        LOGGER.info("[E][" + id + "][Duration = " + (System.currentTimeMillis() - id) + "] >>>>>>>>>>>>>>>>>>>>>>>>>> End Start ScheduleApplication ...");
+        LOGGER.info("[E][" + id + "][Duration = " + (System.currentTimeMillis() - id) + "] >>>>>>>>>>>>>>>>>>>>>>>>>> SUCCESS <<<<<<<<<<<<<<<<<<<<<<<<<");
 
     }
 }
