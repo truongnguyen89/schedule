@@ -22,7 +22,7 @@ public class WeatherSchedule {
     WeatherService weatherService;
 
 
-    @Scheduled(fixedDelay = 660000, initialDelay = 150000)
+    @Scheduled(fixedDelay = 60000, initialDelay = 10000)
     public void get5DayWeather() {
         System.out.println("Begin get5DayWeather ");
         List<WeatherLocal> weatherLocalList = weatherService.findByStatus(Constant.STATUS_OBJECT.ACTIVE);
