@@ -69,7 +69,7 @@ public class BookingServiceImpl extends BaseService implements BookingService {
             );
         //Validate player, create user, match
         User player = userRepository.findOne(booking.getPlayerId());
-        if (player == null || player.getStatus() != Constant.STATUS_OBJECT.ACTIVE_INT)
+        if (player == null || player.getStatus() != Constant.STATUS_OBJECT.ACTIVE)
             throw new CommonException(Response.NOT_FOUND,
                     MessageCommon.getMessage(
                             TextConstant.MESSAGE.NOT_FOUND_FIELD_OF_OBJECT,
@@ -78,7 +78,7 @@ public class BookingServiceImpl extends BaseService implements BookingService {
                     )
             );
         User creater = userRepository.findOne(booking.getCreatedUserId());
-        if (creater == null || creater.getStatus() != Constant.STATUS_OBJECT.ACTIVE_INT)
+        if (creater == null || creater.getStatus() != Constant.STATUS_OBJECT.ACTIVE)
             throw new CommonException(Response.NOT_FOUND,
                     MessageCommon.getMessage(
                             TextConstant.MESSAGE.NOT_FOUND_FIELD_OF_OBJECT,

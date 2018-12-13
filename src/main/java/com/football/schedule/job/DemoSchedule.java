@@ -94,7 +94,7 @@ public class DemoSchedule {
                 stadiumManager.setStadiumId(stadiumNew.getId());
                 stadiumManager.setUserId(userNew.getId());
                 stadiumManager.setType(1);
-                stadiumManager.setStatus(Constant.STATUS_OBJECT.ACTIVE_INT);
+                stadiumManager.setStatus(Constant.STATUS_OBJECT.ACTIVE);
                 stadiumManagerRepository.save(stadiumManager);
 
                 //Tao san nho
@@ -105,7 +105,7 @@ public class DemoSchedule {
                     subStadium.setLength(40);
                     subStadium.setWidth(20);
                     subStadium.setType(1);
-                    subStadium.setStatus(Constant.STATUS_OBJECT.ACTIVE_INT);
+                    subStadium.setStatus(Constant.STATUS_OBJECT.ACTIVE);
                     subStadiumRepository.save(subStadium);
                 }
 
