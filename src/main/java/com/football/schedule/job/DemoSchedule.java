@@ -47,80 +47,69 @@ public class DemoSchedule {
 
     @Scheduled(fixedDelay = 2000000)
     public void insertDataDemoSchedule() {
-        System.out.println("Begin insertDataDemoSchedule ");
-//        File file = new ResourceCommon().getFile("area.xls");
-//        File file = null;
-//        try {
-//            file = new ClassPathResource("area.xls").getFile();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        areaService.importFromExcelFile(file);
-//        System.out.println("End importFromExcelFile ");
-//
-//        for (int i = 0; i < 10; i++) {
-//            int k = i % 2;
-//            if (k == 0) {
-//                User user = new User("nguoichoi" + i,
-//                        "matkhaunguoichoi" + i,
-//                        "Người chơi " + i,
-//                        "nqtruong@ecpay.vn",
-//                        "0962266682",
-//                        "Địa chỉ người chơi " + i,
-//                        k + 1,
-//                        1
-//                );
-//                User userNew = userRepository.save(user);
-//
-//                //Dat san
-//            } else {
-//                User user = new User(
-//                        "quanly" + i,
-//                        "matkhauquanly" + i,
-//                        "Quản lý " + i,
-//                        "nqtruong@ecpay.vn",
-//                        "0962266682",
-//                        "Địa chỉ quản lý " + i,
-//                        k + 1,
-//                        1
-//                );
-//                User userNew = userRepository.save(user);
-//
-//                int numberOfSubStadium = NumberCommon.getRandomBetweenRange(1, 6);
-//                //Tao san va quan ly san
-//                Stadium stadium = new Stadium(
-//                        "Sân bóng số " + i,
-//                        "Địa chỉ sân bóng số " + i,
-//                        "nqtruong@ecpay.vn",
-//                        "0962266682",
-//                        (long) NumberCommon.getRandomBetweenRange(1, 100),
-//                        numberOfSubStadium,
-//                        k + 1,
-//                        1
-//                );
-//
-//                Stadium stadiumNew = stadiumRepository.save(stadium);
-//
-//                StadiumManager stadiumManager = new StadiumManager();
-//                stadiumManager.setStadiumId(stadiumNew.getId());
-//                stadiumManager.setUserId(userNew.getId());
-//                stadiumManager.setType(1);
-//                stadiumManager.setStatus(Constant.STATUS_OBJECT.ACTIVE);
-//                stadiumManagerRepository.save(stadiumManager);
-//
-//                //Tao san nho
-//                for (int j = 1; j <= numberOfSubStadium; j++) {
-//                    SubStadium subStadium = new SubStadium();
-//                    subStadium.setStadiumId(stadiumNew.getId());
-//                    subStadium.setNumber(j + "");
-//                    subStadium.setLength(40);
-//                    subStadium.setWidth(20);
-//                    subStadium.setType(1);
-//                    subStadium.setStatus(Constant.STATUS_OBJECT.ACTIVE);
-//                    subStadiumRepository.save(subStadium);
-//                }
-//
-//            }
-//        }
+        for (int i = 0; i < 10; i++) {
+            int k = i % 2;
+            if (k == 0) {
+                User user = new User("nguoichoi" + i,
+                        "matkhaunguoichoi" + i,
+                        "Người chơi " + i,
+                        "nqtruong@ecpay.vn",
+                        "0962266682",
+                        "Địa chỉ người chơi " + i,
+                        k + 1,
+                        1
+                );
+                User userNew = userRepository.save(user);
+
+                //Dat san
+            } else {
+                User user = new User(
+                        "quanly" + i,
+                        "matkhauquanly" + i,
+                        "Quản lý " + i,
+                        "nqtruong@ecpay.vn",
+                        "0962266682",
+                        "Địa chỉ quản lý " + i,
+                        k + 1,
+                        1
+                );
+                User userNew = userRepository.save(user);
+
+                int numberOfSubStadium = NumberCommon.getRandomBetweenRange(1, 6);
+                //Tao san va quan ly san
+                Stadium stadium = new Stadium(
+                        "Sân bóng số " + i,
+                        "Địa chỉ sân bóng số " + i,
+                        "nqtruong@ecpay.vn",
+                        "0962266682",
+                        (long) NumberCommon.getRandomBetweenRange(1, 100),
+                        numberOfSubStadium,
+                        k + 1,
+                        1
+                );
+
+                Stadium stadiumNew = stadiumRepository.save(stadium);
+
+                StadiumManager stadiumManager = new StadiumManager();
+                stadiumManager.setStadiumId(stadiumNew.getId());
+                stadiumManager.setUserId(userNew.getId());
+                stadiumManager.setType(1);
+                stadiumManager.setStatus(Constant.STATUS_OBJECT.ACTIVE);
+                stadiumManagerRepository.save(stadiumManager);
+
+                //Tao san nho
+                for (int j = 1; j <= numberOfSubStadium; j++) {
+                    SubStadium subStadium = new SubStadium();
+                    subStadium.setStadiumId(stadiumNew.getId());
+                    subStadium.setNumber(j + "");
+                    subStadium.setLength(40);
+                    subStadium.setWidth(20);
+                    subStadium.setType(1);
+                    subStadium.setStatus(Constant.STATUS_OBJECT.ACTIVE);
+                    subStadiumRepository.save(subStadium);
+                }
+
+            }
+        }
     }
 }
