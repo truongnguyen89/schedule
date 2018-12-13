@@ -2,6 +2,8 @@ package com.football.schedule.service.area;
 
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Truong Nguyen
@@ -12,4 +14,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface AreaService {
     boolean importFromExcelFile(String filePath);
+
+    boolean importFromExcelFile(File file);
 }

@@ -24,13 +24,10 @@
     </properties>
 
     <dependencies>
+        <!-->>>>>>>>>>>>>>>>>>>>>>> Begin POM.XML COMMON <<<<<<<<<<<<<<<<<<<<<<<-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -43,17 +40,12 @@
             <version>2.1.1.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway.schedule./artifactId>
-            <version>5.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -67,9 +59,127 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20140107</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.8.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>4.3.13.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-gmail</artifactId>
+            <version>v1-rev86-1.23.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.9</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <!-- Begin Read & Write Excel-->
+        <dependency>
+            <groupId>org.jxls</groupId>
+            <artifactId>jxls-jexcel</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jxls</groupId>
+            <artifactId>jxls</artifactId>
+            <version>2.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jxls</groupId>
+            <artifactId>jxls-core</artifactId>
+            <version>0.9.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.2-FINAL</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <!-- End Read & Write Excel-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
+        <!-- email with Swagger API doc generation http://goo.gl/J5FQDM -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+        <!--Begin dung cho core-->
+        <!-- https://mvnrepository.com/artifact/org.jpos/jpos-->
+        <dependency>
+            <groupId>org.jpos</groupId>
+            <artifactId>jpos</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jdom/jdom -->
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <!--End dung cho core-->
         <!--BEGIN LOG4J-->
         <!-- Exclude Spring Boot's Default Logging -->
         <dependency>
@@ -99,6 +209,79 @@
             <version>3.4.0</version>
         </dependency>
         <!--END LOG4J-->
+        <!-- https://mvnrepository.com/artifact/com.jolbox/bonecp -->
+        <dependency>
+            <groupId>com.jolbox</groupId>
+            <artifactId>bonecp</artifactId>
+            <version>0.8.0.RELEASE</version>
+        </dependency>
+        <!--<<<<<<<<<<<<<<<<<<<<<<<  End  POM.XML COMMON >>>>>>>>>>>>>>>>>>>>>>>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
+            <version>3.1.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>4.3.13.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20140107</version>
+        </dependency>
         <!-- email with Swagger API doc generation http://goo.gl/J5FQDM -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -111,6 +294,72 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>2.8.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.jolbox/bonecp -->
+        <dependency>
+            <groupId>com.jolbox</groupId>
+            <artifactId>bonecp</artifactId>
+            <version>0.8.0.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.sleepycat/je -->
+        <dependency>
+            <groupId>com.sleepycat</groupId>
+            <artifactId>je</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+        <!--Begin dung cho core-->
+        <!-- https://mvnrepository.com/artifact/org.jpos/jpos-->
+        <dependency>
+            <groupId>org.jpos</groupId>
+            <artifactId>jpos</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jdom/jdom -->
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <!--End dung cho core-->
+        <!--BEGIN LOG4J-->
+        <!-- Exclude Spring Boot's Default Logging -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Add Log4j2 Dependency -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <!-- Needed for SMTP Appender -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <!-- Needed for Async Logging with Log4j 2 -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+        <!--END LOG4J-->
     </dependencies>
 
     <dependencyManagement>

@@ -5,6 +5,7 @@ import com.football.common.util.DateCommon;
 import com.football.schedule.service.email.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
@@ -15,6 +16,7 @@ import java.util.Date;
  * Time: 4:48 PM
  * To change this template use File | Settings | File Templates.
  */
+@Component
 public class SendEmailSchedule {
     @Autowired
     EmailService emailService;

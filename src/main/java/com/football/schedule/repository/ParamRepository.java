@@ -17,6 +17,4 @@ import java.util.List;
 @Repository
 public interface ParamRepository extends CrudRepository<Param, ParamKey> {
     List<Param> findByStatus(int status);
-
-
 }
