@@ -15,14 +15,21 @@ import java.util.List;
  */
 @Repository
 public interface AreaRepository extends CrudRepository<Area, Long> {
-    List<Area> findByCityProvincialIdAndCountyDistrictIdAndCommuneId(
+    List<Area> findByCityProvincialIdAndCountyDistrictIdAndCommuneIdAndType(
             long cityProvincialId,
             long countyDistrictId,
-            long communeId
+            long communeId,
+            int type
     );
 
-    List<Area> findByCityProvincialIdAndCountyDistrictId(
+    List<Area> findByCityProvincialIdAndCountyDistrictIdAndType(
             long cityProvincialId,
-            long countyDistrictId
+            long countyDistrictId,
+            int type
+    );
+
+    List<Area> findByCityProvincialIdAndType(
+            long cityProvincialId,
+            int type
     );
 }

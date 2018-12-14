@@ -13,7 +13,7 @@ import java.io.File;
  */
 @Service
 public interface AreaService {
-    boolean importFromExcelFile(String filePath);
+    boolean importFromExcelFile();
 
     boolean importFromExcelFile(File file);
 }
