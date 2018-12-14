@@ -1,24 +1,17 @@
 package com.football.schedule.job;
 
 import com.football.common.constant.Constant;
-import com.football.common.model.stadium.Stadium;
-import com.football.common.model.stadium.StadiumManager;
-import com.football.common.model.stadium.SubStadium;
-import com.football.common.model.user.User;
-import com.football.common.resource.ResourceCommon;
-import com.football.common.util.NumberCommon;
 import com.football.schedule.repository.StadiumManagerRepository;
 import com.football.schedule.repository.StadiumRepository;
 import com.football.schedule.repository.SubStadiumRepository;
 import com.football.schedule.repository.UserRepository;
 import com.football.schedule.service.area.AreaService;
+import com.football.schedule.service.weather.WeatherService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,6 +22,8 @@ import java.io.IOException;
  */
 @Component
 public class DemoSchedule {
+
+    private static final Logger LOGGER = LogManager.getLogger(Constant.LOG_APPENDER.APPLICATION);
 
     @Autowired
     UserRepository userRepository;
@@ -44,6 +39,9 @@ public class DemoSchedule {
 
     @Autowired
     AreaService areaService;
+
+    @Autowired
+    WeatherService weatherService;
 
     @Scheduled(fixedDelay = 2000000)
     public void insertDataDemoSchedule() {
@@ -111,5 +109,13 @@ public class DemoSchedule {
 //
 //            }
 //        }
+    }
+
+    @Scheduled(fixedDelay = 6000, initialDelay = 100000)
+    public void importDataTest() {
+        long id = System.currentTimeMillis();
+        LOGGER.info("[B][" + id + "] >>>>>>>>>>>>>>>>>>>>>>>>>> Start WeatherSchedule.importDataTest ...");
+        weatherService.importWeatherLocalFromFileJson();
+        LOGGER.info("[E][" + id + "][Duration = " + (System.currentTimeMillis() - id) + "] >>>>>>>>>>>>>>>>>>>>>>>>>> End WeatherSchedule.importDataTest ...");
     }
 }

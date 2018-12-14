@@ -19,7 +19,7 @@ public interface WeatherService {
 
     List<WeatherInfo> get5DayWeather(long localId);
 
-    List<WeatherLocal> importWatherLocal();
+    boolean importWeatherLocalFromFileJson();
 
     List<WeatherLocal> findByStatus(int status);
 }

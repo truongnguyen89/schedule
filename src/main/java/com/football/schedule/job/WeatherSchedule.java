@@ -40,12 +40,4 @@ public class WeatherSchedule {
         LOGGER.info("[E][" + id + "][Duration = " + (System.currentTimeMillis() - id) + "] >>>>>>>>>>>>>>>>>>>>>>>>>> End WeatherSchedule.get5DayWeather ...");
     }
 
-    @Scheduled(fixedDelay = 6000, initialDelay = 100000)
-    public void importWatherLocal() {
-        long id = System.currentTimeMillis();
-        LOGGER.info("[B][" + id + "] >>>>>>>>>>>>>>>>>>>>>>>>>> Start WeatherSchedule.importWatherLocal ...");
-        weatherService.importWatherLocal();
-        LOGGER.info("[E][" + id + "][Duration = " + (System.currentTimeMillis() - id) + "] >>>>>>>>>>>>>>>>>>>>>>>>>> End WeatherSchedule.importWatherLocal ...");
-    }
-
 }
