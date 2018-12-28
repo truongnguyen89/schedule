@@ -5,6 +5,9 @@ import com.football.schedule.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * UserRepository: Truong Nguyen
@@ -26,5 +29,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public Iterable<User> findAll() throws Exception {
         return userRepository.findAll();
+    }
+
+    @Override
+    public List<User> findByUpdatedAtAfterOrderByUpdatedAt(Date date) throws Exception {
+        return userRepository.findByUpdatedAtAfter(date);
+    }
+
+    @Override
+    public List<User> findByCreatedAtAfterOrderById(Date date) throws Exception {
+        return userRepository.findByCreatedAtAfter(date);
     }
 }
