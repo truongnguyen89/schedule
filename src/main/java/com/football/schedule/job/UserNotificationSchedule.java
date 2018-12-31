@@ -29,31 +29,31 @@ public class UserNotificationSchedule {
     @Autowired
     DataAccess dataAccess;
 
-    @Scheduled(fixedDelay = 1000)
-    public void sendEmailLogin() {
-        try {
-            List<User> userList = userService.findByUpdatedAtAfterOrderByUpdatedAt(DateCommon.addSecond(new Date(), -5));
-            if (!ArrayListCommon.isNullOrEmpty(userList))
-                for (User user : userList) {
-                    Email email = new Email("nqtruong@ecpay.vn", "[" + user.getId() + "]Mới đăng nhập", JsonCommon.objectToJsonLog(user));
-                    dataAccess.saveEmail(email);
-                }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Scheduled(fixedDelay = 1000)
-    public void sendEmailSigup() {
-        try {
-            List<User> userList = userService.findByCreatedAtAfterOrderById(DateCommon.addSecond(new Date(), -5));
-            if (!ArrayListCommon.isNullOrEmpty(userList))
-                for (User user : userList) {
-                    Email email = new Email("nqtruong@ecpay.vn", "[" + user.getId() + "]Mới đăng ký", JsonCommon.objectToJsonLog(user));
-                    dataAccess.saveEmail(email);
-                }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    @Scheduled(fixedDelay = 1000)
+//    public void sendEmailLogin() {
+//        try {
+//            List<User> userList = userService.findByUpdatedAtAfterOrderByUpdatedAt(DateCommon.addSecond(new Date(), -5));
+//            if (!ArrayListCommon.isNullOrEmpty(userList))
+//                for (User user : userList) {
+//                    Email email = new Email("nqtruong@ecpay.vn", "[" + user.getId() + "]Mới đăng nhập", JsonCommon.objectToJsonLog(user));
+//                    dataAccess.saveEmail(email);
+//                }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @Scheduled(fixedDelay = 1000)
+//    public void sendEmailSigup() {
+//        try {
+//            List<User> userList = userService.findByCreatedAtAfterOrderById(DateCommon.addSecond(new Date(), -5));
+//            if (!ArrayListCommon.isNullOrEmpty(userList))
+//                for (User user : userList) {
+//                    Email email = new Email("nqtruong@ecpay.vn", "[" + user.getId() + "]Mới đăng ký", JsonCommon.objectToJsonLog(user));
+//                    dataAccess.saveEmail(email);
+//                }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
