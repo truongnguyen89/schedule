@@ -1,7 +1,7 @@
 package com.football.schedule.component;
 
 import com.football.common.model.email.Email;
-import com.football.schedule.repository.EmailRepository;
+import com.football.common.repository.EmailRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

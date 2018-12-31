@@ -8,7 +8,7 @@ import com.football.common.email.GmailCommon;
 import com.football.common.model.email.Email;
 import com.football.common.response.Response;
 import com.football.common.util.ArrayListCommon;
-import com.football.schedule.repository.EmailRepository;
+import com.football.common.repository.EmailRepository;
 import com.football.schedule.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

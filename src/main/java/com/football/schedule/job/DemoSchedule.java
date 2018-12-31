@@ -1,10 +1,10 @@
 package com.football.schedule.job;
 
 import com.football.common.constant.Constant;
-import com.football.schedule.repository.StadiumManagerRepository;
-import com.football.schedule.repository.StadiumRepository;
-import com.football.schedule.repository.SubStadiumRepository;
-import com.football.schedule.repository.UserRepository;
+import com.football.common.repository.StadiumManagerRepository;
+import com.football.common.repository.StadiumRepository;
+import com.football.common.repository.SubStadiumRepository;
+import com.football.common.repository.UserRepository;
 import com.football.schedule.service.area.AreaService;
 import com.football.schedule.service.weather.WeatherService;
 import org.apache.logging.log4j.LogManager;

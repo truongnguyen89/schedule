@@ -8,7 +8,7 @@ import com.football.common.model.param.ParamKey;
 import com.football.common.response.Response;
 import com.football.common.util.Resource;
 import com.football.common.util.StringCommon;
-import com.football.schedule.repository.ParamRepository;
+import com.football.common.repository.ParamRepository;
 import com.football.schedule.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.football.schedule.service.stadium;
 
 import com.football.common.model.stadium.Stadium;
-import com.football.schedule.repository.StadiumRepository;
+import com.football.common.repository.StadiumRepository;
 import com.football.schedule.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

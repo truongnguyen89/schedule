@@ -1,7 +1,7 @@
 package com.football.schedule.service.user;
 
 import com.football.common.model.user.User;
-import com.football.schedule.repository.UserRepository;
+import com.football.common.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
